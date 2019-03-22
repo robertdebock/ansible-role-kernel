@@ -1,0 +1,63 @@
+---
+# tasks file for kernel
+- name: install requirements
+  package:
+    name: "{{ kernel_requirements }}"
+    state: present
+
+- name: download kernel archive
+  unarchive:
+    src: "{{ kernel_unarchive_src }}"
+    dest: "{{ kernel_build_location }}"
+    remote_src: yes
+    creates: "{{ kernel_unarchive_creates }}"
+
+- name: make defconfig
+  command: make defconfig
+  args:
+    chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
+    creates: "{{ kernel_build_location }}/linux-{{ kernel_version }}/.config"
+
+- name: change selected parameters in config
+  lineinfile:
+    path: "{{ kernel_build_location }}/linux-{{ kernel_version }}/.config"
+    regexp: "^{{ item.name }}="
+    line: "{{ item.name }}={{ item.value }}"
+  with_items:
+    - "{{ kernel_parameters }}"
+  when:
+    - kernel_parameters is defined
+
+- name: show shit
+  debug:
+    msg: "creates: {{ kernel_build_location }}/linux-{{ kernel_version }}/vmlinux"
+
+- name: make
+  command: make -j {{ ansible_processor_vcpus * 2 }}
+  args:
+    chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
+    creates: "{{ kernel_build_location }}/linux-{{ kernel_version }}/vmlinux"
+  async: 1800
+  poll: 0
+  register: kernel_make
+  changed_when: no
+
+- name: wait for make
+  async_status:
+    jid: "{{ kernel_make.ansible_job_id }}"
+  register: kernel_wait_for_make
+  until: kernel_wait_for_make.finished
+  retries: 60
+  delay: 30
+
+- name: make modules_install
+  command: make modules_install
+  args:
+    chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
+    creates: /usr/lib/modules/{{ kernel_version }}
+
+- name: make install
+  command: make install
+  args:
+    chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
+    creates: /boot/vmlinuz

@@ -1,0 +1,19 @@
+---
+# vars file for kernel
+
+kernel_unarchive_src: https://cdn.kernel.org/pub/linux/kernel/v{{ kernel_version[:1] }}.x/linux-{{ kernel_version }}.tar.xz
+
+kernel_unarchive_creates: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
+
+_kernel_requirements:
+  default:
+    - bc
+    - bison
+    - elfutils-libelf-devel
+    - flex
+    - hostname
+    - kernel-devel
+    - openssl-devel
+    - xz
+
+kernel_requirements: "{{ _kernel_requirements[ansible_distribution] | default(_kernel_requirements['default']) }}"
