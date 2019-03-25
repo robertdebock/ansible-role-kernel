@@ -28,10 +28,6 @@
   when:
     - kernel_parameters is defined
 
-- name: show shit
-  debug:
-    msg: "creates: {{ kernel_build_location }}/linux-{{ kernel_version }}/vmlinux"
-
 - name: make
   command: make -j {{ ansible_processor_vcpus * 2 }}
   args:
@@ -54,10 +50,15 @@
   command: make modules_install
   args:
     chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
-    creates: /usr/lib/modules/{{ kernel_version }}
+    creates: "{{ kernel_modules_location }}"
+
+- name: ensure kernel directory exists
+  file:
+    path: "{{ kernel_installation_location | dirname }}"
+    state: directory
 
 - name: make install
   command: make install
   args:
     chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
-    creates: /boot/vmlinuz
+    creates: "{{ kernel_installation_location }}"

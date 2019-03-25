@@ -11,9 +11,70 @@ _kernel_requirements:
     - bison
     - elfutils-libelf-devel
     - flex
+    - openssl-devel
+    - xz
+  Alpine:
+    - bc
+    - bison
+    - libelf-dev
+    - flex
+    - openssl-dev
+    - xz
+  Archlinux:
+    - bc
+    - bison
+    - libelf
+    - flex
+    - openssl
+    - xz
+  Debian:
+    - bc
+    - bison
+    - flex
+    - libelf-dev
+    - libssl-dev
+  Fedora:
+    - bc
+    - bison
+    - elfutils-libelf-devel
+    - flex
     - hostname
     - kernel-devel
     - openssl-devel
     - xz
+  openSUSE Leap:
+    - bc
+    - bison
+    - libelf-devel
+    - flex
+    - openssl-devel
+    - xz
+  Ubuntu:
+    - bc
+    - bison
+    - flex
+    - libelf-dev
+    - libssl-dev
 
 kernel_requirements: "{{ _kernel_requirements[ansible_distribution] | default(_kernel_requirements['default']) }}"
+
+_kernel_modules_location:
+  default: /usr/lib/modules/{{ kernel_version }}
+  Alpine: /lib/modules/{{ kernel_version }}
+  Archlinux: /usr/lib/modules/{{ kernel_version }}
+  Debian: /lib/modules/{{ kernel_version }}
+  Fedora: /usr/lib/modules/{{ kernel_version }}
+  openSUSE Leap: /lib/modules/{{ kernel_version }}
+  Ubuntu: /lib/modules/{{ kernel_version }}
+
+kernel_modules_location: "{{ _kernel_modules_location[ansible_distribution] | default(_kernel_modules_location['default']) }}"
+
+_kernel_installation_location:
+  default: /boot/vmlinuz
+  Alpine: /boot/vmlinuz
+  Archlinux: /boot/vmlinuz
+  Debian: /boot/vmlinuz-{{ kernel_version }}
+  Fedora: /boot/vmlinuz
+  Ubuntu: /boot/vmlinuz-{{ kernel_version }}
+
+kernel_installation_location: "{{ _kernel_installation_location[ansible_distribution] | default(_kernel_installation_location['default']) }}"
