@@ -12,21 +12,18 @@ _kernel_requirements:
     - elfutils-libelf-devel
     - flex
     - openssl-devel
-    - xz
   Alpine:
     - bc
     - bison
     - libelf-dev
     - flex
     - openssl-dev
-    - xz
   Archlinux:
     - bc
     - bison
     - libelf
     - flex
     - openssl
-    - xz
   Debian:
     - bc
     - bison
@@ -41,14 +38,12 @@ _kernel_requirements:
     - hostname
     - kernel-devel
     - openssl-devel
-    - xz
   openSUSE Leap:
     - bc
     - bison
     - libelf-devel
     - flex
     - openssl-devel
-    - xz
   Ubuntu:
     - bc
     - bison
