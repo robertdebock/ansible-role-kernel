@@ -41,7 +41,7 @@ platforms:
     image: fedora:rawhide
     pre_build_image: yes
   - name: kernel-opensuse-leap
-    image: opensuse:leap
+    image: opensuse/leap
     pre_build_image: yes
   - name: kernel-ubuntu-latest
     image: ubuntu:latest
