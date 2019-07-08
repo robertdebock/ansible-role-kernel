@@ -15,7 +15,6 @@ _kernel_requirements:
   Alpine:
     - bc
     - bison
-    - libelf-dev
     - flex
     - openssl-dev
   Archlinux:
