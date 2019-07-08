@@ -16,6 +16,7 @@ _kernel_requirements:
     - bc
     - bison
     - flex
+    - elfutils-dev
     - openssl-dev
   Archlinux:
     - bc
