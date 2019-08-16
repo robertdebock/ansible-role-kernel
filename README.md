@@ -44,7 +44,7 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for kernel
 
-kernel_version: 5.0.3
+kernel_version: 5.2.9
 
 kernel_build_location: /tmp
 
@@ -99,6 +99,12 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+Upstream version(s)
+-------------------
+
+
+This role [refers to a version](https://github.com/robertdebock/ansible-role-kernel/blob/master/defaults/main.yml) of [the Linux kernel](https://www.kernel.org/).
 
 Testing
 -------
