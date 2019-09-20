@@ -1,7 +1,7 @@
 ---
 # defaults file for kernel
 
-kernel_version: 5.2.9
+kernel_version: 5.3
 
 kernel_build_location: /tmp
 
