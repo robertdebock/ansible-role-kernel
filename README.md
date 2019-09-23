@@ -44,7 +44,7 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for kernel
 
-kernel_version: 5.3
+kernel_version: "5.3"
 
 kernel_build_location: /tmp
 
@@ -100,6 +100,14 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| CentOS 6 | Sorry, your compiler is too old. |
 
 Included version(s)
 -------------------
