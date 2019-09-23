@@ -68,8 +68,8 @@ _kernel_installation_location:
   default: /boot/vmlinuz
   Alpine: /boot/vmlinuz
   Archlinux: /boot/vmlinuz
-  Debian: /boot/vmlinuz-{{ kernel_version }}
+  Debian: /boot/vmlinuz-{{ kernel_version }}*
   Fedora: /boot/vmlinuz
-  Ubuntu: /boot/vmlinuz-{{ kernel_version }}
+  Ubuntu: /boot/vmlinuz-{{ kernel_version }}*
 
 kernel_installation_location: "{{ _kernel_installation_location[ansible_distribution] | default(_kernel_installation_location['default']) }}"
