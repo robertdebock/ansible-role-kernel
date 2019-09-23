@@ -54,13 +54,13 @@ _kernel_requirements:
 kernel_requirements: "{{ _kernel_requirements[ansible_distribution] | default(_kernel_requirements['default']) }}"
 
 _kernel_modules_location:
-  default: /usr/lib/modules/{{ kernel_version }}
-  Alpine: /lib/modules/{{ kernel_version }}
-  Archlinux: /usr/lib/modules/{{ kernel_version }}
-  Debian: /lib/modules/{{ kernel_version }}
-  Fedora: /usr/lib/modules/{{ kernel_version }}
-  openSUSE Leap: /lib/modules/{{ kernel_version }}
-  Ubuntu: /lib/modules/{{ kernel_version }}
+  default: /usr/lib/modules/{{ kernel_version }}*
+  Alpine: /lib/modules/{{ kernel_version }}*
+  Archlinux: /usr/lib/modules/{{ kernel_version }}*
+  Debian: /lib/modules/{{ kernel_version }}*
+  Fedora: /usr/lib/modules/{{ kernel_version }}*
+  openSUSE Leap: /lib/modules/{{ kernel_version }}*
+  Ubuntu: /lib/modules/{{ kernel_version }}*
 
 kernel_modules_location: "{{ _kernel_modules_location[ansible_distribution] | default(_kernel_modules_location['default']) }}"
 
