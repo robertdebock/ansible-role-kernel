@@ -6,8 +6,8 @@ kernel
 
 Build and install a kernel
 
-<img src="https://img.shields.io/ansible/role/d/38960"/>
-<img src="https://img.shields.io/ansible/quality/38960"/>
+<img src="https://img.shields.io/ansible/role/d/"/>
+<img src="https://img.shields.io/ansible/quality/"/>
 
 Example Playbook
 ----------------
@@ -34,6 +34,7 @@ The machine you are running this on, may need to be prepared.
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.core_dependencies
     - robertdebock.buildtools
 ```
 
@@ -67,6 +68,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.core_dependencies
 - robertdebock.buildtools
 
 ```
