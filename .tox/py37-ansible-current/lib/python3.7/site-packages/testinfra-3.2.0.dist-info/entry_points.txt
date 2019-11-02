@@ -1,0 +1,3 @@
+[pytest11]
+pytest11.testinfra = testinfra.plugin
+

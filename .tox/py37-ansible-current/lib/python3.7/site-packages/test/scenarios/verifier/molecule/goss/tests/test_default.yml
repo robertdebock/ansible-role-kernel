@@ -1,0 +1,10 @@
+# Molecule managed
+
+---
+file:
+  /etc/molecule:
+    exists: true
+    owner: root
+    group: root
+    mode: "0755"
+    filetype: directory

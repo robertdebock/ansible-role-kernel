@@ -1,0 +1,3 @@
+[console_scripts]
+gilt = gilt.shell:main
+

@@ -1,0 +1,64 @@
+---
+dependency:
+  name: {{ cookiecutter.dependency_name }}
+driver:
+  name: {{ cookiecutter.driver_name }}
+{%- if cookiecutter.driver_name == 'vagrant' %}
+  provider:
+    name: virtualbox
+{%- endif %}
+lint:
+  name: {{ cookiecutter.lint_name }}
+platforms:
+{%- if cookiecutter.driver_name == 'azure' %}
+  - name: instance
+{%- elif cookiecutter.driver_name == 'digitalocean' %}
+  - name: instance
+    region_id: nyc3
+    image_id: ubuntu-18-10-x64
+    size_id: s-1vcpu-1gb
+{%- elif cookiecutter.driver_name == 'docker' %}
+  - name: instance
+    image: centos:7
+{%- elif cookiecutter.driver_name == 'ec2' %}
+  - name: instance
+    image: ami-a5b196c0
+    instance_type: t2.micro
+    vpc_subnet_id: subnet-6456fd1f
+{%- elif cookiecutter.driver_name == 'gce' %}
+  - name: instance
+    zone: us-west1-a
+    machine_type: f1-micro
+    image: debian-8
+{%- elif cookiecutter.driver_name == 'hetznercloud' %}
+  - name: instance
+    server_type: cx11
+    image: debian-9
+{%- elif cookiecutter.driver_name == 'lxc' %}
+  - name: instance
+{%- elif cookiecutter.driver_name == 'linode' %}
+  - name: instance
+    plan: 1
+    datacenter: 7
+    distribution: 129
+{%- elif cookiecutter.driver_name == 'lxd' %}
+  - name: instance
+{%- elif cookiecutter.driver_name == 'openstack' %}
+  - name: instance
+    image: Ubuntu-16.04
+    flavor: NO-Nano
+{%- elif cookiecutter.driver_name == 'podman' %}
+  - name: instance
+    image: centos:7
+{%- elif cookiecutter.driver_name == 'vagrant' %}
+  - name: instance
+    box: ubuntu/xenial64
+{%- endif %}
+provisioner:
+  name: {{ cookiecutter.provisioner_name }}
+  lint:
+    name: {{ cookiecutter.provisioner_lint_name }}
+verifier:
+  name: {{ cookiecutter.verifier_name }}
+  lint:
+    name: {{ cookiecutter.verifier_lint_name }}

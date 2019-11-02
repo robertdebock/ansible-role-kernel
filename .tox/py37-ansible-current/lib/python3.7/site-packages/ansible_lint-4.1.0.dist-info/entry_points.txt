@@ -1,0 +1,3 @@
+[console_scripts]
+ansible-lint = ansiblelint.__main__:main
+
