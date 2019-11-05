@@ -1,8 +1,0 @@
----
-- name: Cleanup external hosts
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Debug
-      debug:
-        msg: "Cleaned up"
