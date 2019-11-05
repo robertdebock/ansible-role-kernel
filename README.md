@@ -2,12 +2,9 @@ kernel
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/><img src="https://raw.githubusercontent.com/robertdebock/ansible-role-kernel/master/meta/logo.png" alt="Project logo" width="40" height="40" align="left"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-kernel"><img src="https://travis-ci.org/robertdebock/ansible-role-kernel.svg?branch=master" alt="Build status" align="left"/></a>
+<a href="https://travis-ci.org/robertdebock/ansible-role-kernel"><img src="https://travis-ci.org/robertdebock/ansible-role-kernel.svg?branch=master" alt="Build status"/></a><img src="https://img.shields.io/ansible/role/d/38960"/><img src="https://img.shields.io/ansible/quality/38960"/>
 
 Build and install a kernel
-
-<img src="https://img.shields.io/ansible/role/d/38960"/>
-<img src="https://img.shields.io/ansible/quality/38960"/>
 
 Example Playbook
 ----------------
