@@ -9,6 +9,7 @@ _kernel_requirements:
   default:
     - bc
     - bison
+    - diff
     - elfutils-libelf-devel
     - flex
     - openssl-devel
