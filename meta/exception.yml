@@ -1,4 +1,4 @@
 ---
 exceptions:
-  - variation: EL
-    reason: "No package matching 'bison' found available, installed or updated"
+  - variation: amazonlinux:1
+    reason: "Not idempotent on: make modules_install"
