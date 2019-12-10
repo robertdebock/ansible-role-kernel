@@ -2,7 +2,7 @@ kernel
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/><img src="https://raw.githubusercontent.com/robertdebock/ansible-role-kernel/master/meta/logo.png" alt="Project logo" width="40" height="40" align="left"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-kernel"> <img src="https://travis-ci.org/robertdebock/ansible-role-kernel.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/38960"/> <img src="https://img.shields.io/ansible/quality/38960"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-kernel"> <img src="https://travis-ci.org/robertdebock/ansible-role-kernel.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
 
 Build and install a kernel
 
@@ -85,25 +85,22 @@ Compatibility
 
 This role has been tested on these [container images](https://hub.docker.com/):
 
-|container|tag|allow_failures|
-|---------|---|--------------|
-|amazonlinux|latest|no|
-|alpine|latest|no|
-|alpine|edge|yes|
-|debian|unstable|yes|
-|debian|latest|no|
-|centos|7|no|
-|centos|latest|no|
-|fedora|latest|no|
-|fedora|rawhide|yes|
-|opensuse|latest|no|
-|ubuntu|latest|no|
+|container|tags|
+|---------|----|
+|amazon|Candidate|
+|alpine|all|
+|archlinux|all|
+|debian|all|
+|el|7, 8|
+|fedora|all|
+|opensuse|all|
+|ubuntu|artful, bionic|
 
-This role has been tested on these Ansible versions:
+The minimum version of Ansible required is 2.8 but tests have been done to:
 
-- ansible>=2.8, <2.9
-- ansible>=2.9
-- git+https://github.com/ansible/ansible.git@devel
+- The previous version, on version lower.
+- The current version.
+- The development version.
 
 Exceptions
 ----------
@@ -154,20 +151,6 @@ tox
 image="centos" tox
 # Or customize more:
 image="debian" tag="stable" tox
-```
-
-Modules
--------
-
-This role uses the following modules:
-```yaml
----
-- async_status
-- command
-- file
-- lineinfile
-- package
-- unarchive
 ```
 
 License
