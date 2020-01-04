@@ -18,12 +18,6 @@ _kernel_requirements:
     - flex
     - elfutils-dev
     - openssl-dev
-  Archlinux:
-    - bc
-    - bison
-    - libelf
-    - flex
-    - openssl
   Debian:
     - bc
     - bison
@@ -51,7 +45,6 @@ kernel_requirements: "{{ _kernel_requirements[ansible_os_family] | default(_kern
 _kernel_modules_location:
   default: /usr/lib/modules/{{ kernel_version }}*
   Alpine: /lib/modules/{{ kernel_version }}*
-  Archlinux: /usr/lib/modules/{{ kernel_version }}*
   Debian: /lib/modules/{{ kernel_version }}*
   RedHat: /usr/lib/modules/{{ kernel_version }}*
   Suse: /lib/modules/{{ kernel_version }}*
@@ -61,7 +54,6 @@ kernel_modules_location: "{{ _kernel_modules_location[ansible_os_family] | defau
 _kernel_installation_location:
   default: /boot/vmlinuz
   Alpine: /boot/vmlinuz
-  Archlinux: /boot/vmlinuz
   Debian: /boot/vmlinuz-{{ kernel_version }}*
   RedHat: /boot/vmlinuz
 
