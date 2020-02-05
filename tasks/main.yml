@@ -23,8 +23,7 @@
     path: "{{ kernel_build_location }}/linux-{{ kernel_version }}/.config"
     regexp: "^{{ item.name }}="
     line: "{{ item.name }}={{ item.value }}"
-  with_items:
-    - "{{ kernel_parameters }}"
+  loop: "{{ kernel_parameters }}"
   when:
     - kernel_parameters is defined
 
