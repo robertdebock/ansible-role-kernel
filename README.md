@@ -29,9 +29,9 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   gather_facts: no
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.core_dependencies
-    - robertdebock.buildtools
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.buildtools
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
@@ -93,7 +93,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|amazon|Candidate|
 |alpine|all|
 |debian|all|
 |el|7, 8|
