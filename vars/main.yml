@@ -30,7 +30,7 @@ _kernel_requirements:
     # - elfutils-libelf-devel
     - diffutils
     - flex
-    # - hostname
+    - hostname
     # - kernel-devel
     - openssl-devel
   Suse:
