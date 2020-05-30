@@ -89,14 +89,13 @@ Here is an overview of related roles:
 
 ## Compatibility
 
-This role has been tested on these [container images](https://hub.docker.com/):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
-|alpine|all|
-|el|7, 8|
+|el|8|
 |debian|buster, bullseye|
-|fedora|31, 32|
+|fedora|31|
 |opensuse|all|
 |ubuntu|focal, bionic, xenial|
 

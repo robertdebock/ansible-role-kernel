@@ -33,12 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "alpine"
-            tag: "latest"
-          - image: "alpine"
-            tag: "edge"
-          - image: "centos"
-            tag: "7"
           - image: "centos"
             tag: "latest"
           - image: "debian"
@@ -47,8 +41,6 @@ jobs:
             tag: "bullseye"
           - image: "fedora"
             tag: "31"
-          - image: "fedora"
-            tag: "latest"
           - image: "opensuse"
             tag: "latest"
           - image: "ubuntu"
