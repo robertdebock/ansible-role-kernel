@@ -1,0 +1,32 @@
+---
+- name: test if kernel_version is set correctly
+  assert:
+    that:
+      - kernel_version is defined
+      - kernel_version | length > 0
+
+- name: test if kernel_build_location is set correctly
+  assert:
+    that:
+      - kernel_build_location is defined
+      - kernel_build_location | length > 0
+
+- name: test if kernel_parameters is set correctly
+  assert:
+    that:
+      - kernel_parameters | length > 0
+      - kernel_parameters is iterable
+  when:
+    - kernel_parameters is defined
+
+- name: test if item in kernel_parameters is set correctly
+  assert:
+    that:
+      - item.name is defined
+      - item.name | length > 0
+      - item.value is defined
+      - item.value | length > 0
+      - item.value in ["y", "n", "m"]
+  loop: "{{ kernel_parameters }}"
+  when:
+    - kernel_parameters is defined
