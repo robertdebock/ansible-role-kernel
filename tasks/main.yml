@@ -7,6 +7,9 @@
   package:
     name: "{{ kernel_requirements }}"
     state: present
+  register: kernel_install_requirements
+  until: kernel_install_requirements is succeeded
+  retries: 3
 
 - name: download kernel archive
   unarchive:
@@ -14,6 +17,9 @@
     dest: "{{ kernel_build_location }}"
     remote_src: yes
     creates: "{{ kernel_unarchive_creates }}"
+  register: kernel_download_kernel_archive
+  until: kernel_download_kernel_archive is succeeded
+  retries: 3
 
 - name: make defconfig
   command: make defconfig
