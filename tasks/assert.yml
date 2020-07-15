@@ -29,5 +29,7 @@
       - item.value in ["y", "n", "m"]
     quiet: yes
   loop: "{{ kernel_parameters }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - kernel_parameters is defined
