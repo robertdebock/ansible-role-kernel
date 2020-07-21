@@ -93,7 +93,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|8|
+|alpine|all|
+|el|7, 8|
 |debian|buster, bullseye|
 |fedora|31|
 |opensuse|all|
