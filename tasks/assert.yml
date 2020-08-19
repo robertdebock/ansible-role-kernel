@@ -4,18 +4,21 @@
     that:
       - kernel_version is defined
       - kernel_version | length > 0
+    quiet: yes
 
 - name: test if kernel_build_location is set correctly
   assert:
     that:
       - kernel_build_location is defined
       - kernel_build_location | length > 0
+    quiet: yes
 
 - name: test if kernel_parameters is set correctly
   assert:
     that:
       - kernel_parameters | length > 0
       - kernel_parameters is iterable
+    quiet: yes
   when:
     - kernel_parameters is defined
 
