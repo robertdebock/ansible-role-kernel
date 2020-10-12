@@ -93,7 +93,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|alpine|all|
 |el|7, 8|
 |debian|buster|
 |fedora|31|
@@ -114,6 +113,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | amazonlinux:1 | Not idempotent on: make modules_install |
 | debian:bullseye | ./include/linux/filter.h:550:20: note: at offset 0 to object insnsi with size 0 declared here |
+| alpine:edge | make[2]: *** [arch/x86/boot/compressed/Makefile:119: arch/x86/boot/compressed/vmlinux] Error |
 
 ## [Included version(s)](#included-versions)
 
