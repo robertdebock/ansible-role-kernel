@@ -43,8 +43,6 @@ jobs:
             tag: "latest"
           - image: "debian"
             tag: "latest"
-          - image: "debian"
-            tag: "bullseye"
           - image: "fedora"
             tag: "31"
           - image: "opensuse"

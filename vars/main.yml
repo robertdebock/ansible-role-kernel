@@ -15,6 +15,7 @@ _kernel_requirements:
   Alpine:
     - bc
     - bison
+    - diffutils
     - flex
     - elfutils-dev
     - openssl-dev

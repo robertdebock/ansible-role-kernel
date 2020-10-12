@@ -95,7 +95,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |alpine|all|
 |el|7, 8|
-|debian|buster, bullseye|
+|debian|buster|
 |fedora|31|
 |opensuse|all|
 |ubuntu|focal, bionic, xenial|
@@ -113,6 +113,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | amazonlinux:1 | Not idempotent on: make modules_install |
+| debian:bullseye | ./include/linux/filter.h:550:20: note: at offset 0 to object insnsi with size 0 declared here |
 
 ## [Included version(s)](#included-versions)
 
