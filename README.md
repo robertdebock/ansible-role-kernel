@@ -95,7 +95,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |el|7, 8|
 |debian|buster|
-|fedora|31|
+|fedora|all|
 |opensuse|all|
 |ubuntu|focal, bionic, xenial|
 
