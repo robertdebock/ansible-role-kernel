@@ -1,4 +1,5 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.core_dependencies
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.buildtools
+  - name: robertdebock.core_dependencies
