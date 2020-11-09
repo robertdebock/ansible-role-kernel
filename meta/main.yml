@@ -15,9 +15,6 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
-    - name: Fedora
-      versions:
-        - all
     - name: OpenSUSE
       versions:
         - all

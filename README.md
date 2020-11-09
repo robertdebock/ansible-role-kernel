@@ -20,7 +20,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
     - role: robertdebock.kernel
 ```
 
-The machine may need to be prepared using `molecule/resources/prepare.yml`:
+The machine needs to be prepared in CI this is done using `molecule/resources/prepare.yml`:
 ```yaml
 ---
 - name: prepare
@@ -32,19 +32,6 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.bootstrap
     - role: robertdebock.core_dependencies
     - role: robertdebock.buildtools
-```
-
-For verification `molecule/resources/verify.yml` runs after the role has been applied.
-```yaml
----
-- name: Verify
-  hosts: all
-  become: yes
-  gather_facts: no
-
-  tasks:
-    - name: check if connection still works
-      ping:
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -70,15 +57,13 @@ kernel_parameters:
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
 
-The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+## [Status of requirements](#status-of-requirements)
 
-```yaml
----
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.core_dependencies
-
-```
+| Requirement | Travis | GitHub |
+|-------------|--------|--------|
+| [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-bootstrap.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) |
+| [robertdebock.buildtools](https://galaxy.ansible.com/robertdebock/buildtools) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-buildtools.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-buildtools) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-buildtools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-buildtools/actions) |
+| [robertdebock.core_dependencies](https://galaxy.ansible.com/robertdebock/core_dependencies) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-core_dependencies.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-core_dependencies) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-core_dependencies/actions) |
 
 ## [Context](#context)
 
@@ -95,7 +80,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |el|7, 8|
 |debian|buster|
-|fedora|all|
 |opensuse|all|
 |ubuntu|focal, bionic, xenial|
 
