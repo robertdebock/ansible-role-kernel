@@ -29,7 +29,7 @@
       - item.name | length > 0
       - item.value is defined
       - item.value | length > 0
-      - item.value in ["y", "n", "m"]
+      - item.value in [ "y", "n", "m" ]
     quiet: yes
   loop: "{{ kernel_parameters }}"
   loop_control:
