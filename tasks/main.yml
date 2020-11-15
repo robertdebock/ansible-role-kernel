@@ -47,7 +47,8 @@
   async_status:
     jid: "{{ kernel_make.ansible_job_id }}"
   register: kernel_wait_for_make
-  until: kernel_wait_for_make.finished
+  until:
+    - kernel_wait_for_make.finished
   retries: 90
   delay: 30
 
