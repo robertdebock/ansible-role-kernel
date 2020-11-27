@@ -4,12 +4,14 @@
   assert:
     that:
       - kernel_version is defined
+      - kernel_version is string
     quiet: yes
 
 - name: test if kernel_build_location is set correctly
   assert:
     that:
       - kernel_build_location is defined
+      - kernel_build_location is string
     quiet: yes
 
 - name: test if kernel_parameters is set correctly
@@ -24,7 +26,9 @@
   assert:
     that:
       - item.name is defined
+      - item.name is string
       - item.value is defined
+      - item.value is string
       - item.value in [ "y", "n", "m" ]
     quiet: yes
   loop: "{{ kernel_parameters }}"
