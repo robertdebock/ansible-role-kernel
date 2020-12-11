@@ -2,9 +2,9 @@
 
 Build and install a kernel
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-kernel.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-kernel)|[![github](https://github.com/robertdebock/ansible-role-kernel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-kernel/actions)|[![quality](https://img.shields.io/ansible/quality/38960)](https://galaxy.ansible.com/robertdebock/kernel)|[![downloads](https://img.shields.io/ansible/role/d/38960)](https://galaxy.ansible.com/robertdebock/kernel)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-kernel.svg)](https://github.com/robertdebock/ansible-role-kernel/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-kernel.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-kernel)|[![github](https://github.com/robertdebock/ansible-role-kernel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-kernel/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-kernel/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-kernel)|[![quality](https://img.shields.io/ansible/quality/38960)](https://galaxy.ansible.com/robertdebock/kernel)|[![downloads](https://img.shields.io/ansible/role/d/38960)](https://galaxy.ansible.com/robertdebock/kernel)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-kernel.svg)](https://github.com/robertdebock/ansible-role-kernel/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
