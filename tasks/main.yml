@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ kernel_requirements }}"
     state: present
 
 - name: download kernel archive
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ kernel_unarchive_src }}"
     dest: "{{ kernel_build_location }}"
     remote_src: yes
@@ -26,7 +26,7 @@
     creates: "{{ kernel_build_location }}/linux-{{ kernel_version }}/.config"
 
 - name: change selected parameters in config
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ kernel_build_location }}/linux-{{ kernel_version }}/.config"
     regexp: "^{{ item.name }}="
     line: "{{ item.name }}={{ item.value }}"
@@ -46,7 +46,7 @@
   changed_when: no
 
 - name: wait for make
-  async_status:
+  ansible.builtin.assert:
     jid: "{{ kernel_make.ansible_job_id }}"
   register: kernel_wait_for_make
   until:
@@ -61,7 +61,7 @@
     creates: "{{ kernel_modules_location }}"
 
 - name: ensure kernel directory exists
-  file:
+  ansible.builtin.file:
     path: "{{ kernel_installation_location | dirname }}"
     state: directory
     mode: "0750"
