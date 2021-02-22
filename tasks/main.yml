@@ -46,7 +46,7 @@
   changed_when: no
 
 - name: wait for make
-  ansible.builtin.assert:
+  ansible.builtin.async_status:
     jid: "{{ kernel_make.ansible_job_id }}"
   register: kernel_wait_for_make
   until:
