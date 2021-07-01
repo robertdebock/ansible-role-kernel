@@ -27,12 +27,9 @@ _kernel_requirements:
     - libssl-dev
   RedHat:
     - bc
-    # - bison
-    # - elfutils-libelf-devel
     - diffutils
     - flex
     - hostname
-    # - kernel-devel
     - openssl-devel
   Suse:
     - bc
