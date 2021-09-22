@@ -35,8 +35,6 @@ jobs:
         config:
           - image: "rockylinux"
             tag: "latest"
-          - image: "debian"
-            tag: "latest"
           - image: "opensuse"
             tag: "latest"
           - image: "ubuntu"
