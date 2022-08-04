@@ -18,7 +18,7 @@ molecule:
   parallel:
     matrix:
       - image: "enterpriselinux"
-        tag: "latest"
+        tag: "8"
       - image: "opensuse"
         tag: "latest"
       - image: "ubuntu"
