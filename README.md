@@ -1,4 +1,4 @@
-# Ansible role [kernel](#kernel)
+# [Ansible role kernel](#kernel)
 
 Build and install a kernel
 
