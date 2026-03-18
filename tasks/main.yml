@@ -38,7 +38,7 @@
 
 - name: Make
   ansible.builtin.command:
-    cmd: make -j {{ ansible_processor_vcpus * 2 }}
+    cmd: make -j {{ ansible_facts['processor_vcpus'] * 2 }}
     chdir: "{{ kernel_build_location }}/linux-{{ kernel_version }}"
     creates: "{{ kernel_build_location }}/linux-{{ kernel_version }}/vmlinux"
   async: 1800
@@ -48,7 +48,7 @@
 
 - name: Wait for make
   ansible.builtin.async_status:
-    jid: "{{ kernel_make.ansible_job_id }}"
+    jid: "{{ kernel_make.ansible_facts['job_id'] }}"
   register: kernel_wait_for_make
   until:
     - kernel_wait_for_make.finished
