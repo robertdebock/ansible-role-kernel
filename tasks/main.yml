@@ -48,7 +48,7 @@
 
 - name: Wait for make
   ansible.builtin.async_status:
-    jid: "{{ kernel_make.ansible_facts['job_id'] }}"
+    jid: "{{ kernel_make.ansible_job_id }}"
   register: kernel_wait_for_make
   until:
     - kernel_wait_for_make.finished
