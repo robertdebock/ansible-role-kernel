@@ -46,7 +46,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ---
 # defaults file for kernel
 
-kernel_version: "5.15.5"
+kernel_version: "6.12.118"
 
 kernel_build_location: /tmp
 
