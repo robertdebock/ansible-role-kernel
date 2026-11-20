@@ -44,7 +44,8 @@
   async: 1800
   poll: 0
   register: kernel_make
-  changed_when: false
+  changed_when:
+    - false
 
 - name: Wait for make
   ansible.builtin.async_status:
